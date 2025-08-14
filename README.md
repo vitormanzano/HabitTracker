@@ -1,14 +1,16 @@
 # HabitTracker
 A habit tracker to handle your habits easily
 
-# What i'll build?
+# What will I build?
 
-My goal with this project is to build a web application to handle habits.
-See your habits, mark when you do a habit, able to see how many times you did this habit.
+My goal in this project is to build a web application to handle habits. This app will
+allow you to view your habits, mark when you perform a habit, and check how many
+times you have performed this habit.
 
 Check more in the Wiki!
 
-# How to access the Wiki? 
-In the top bar of the page you'll see many services in my repository, find the one who looks like a book and calls Wiki
+# How can I access the Wiki?
+In the top bar of the page, you'll see many services in my repository, find the one that
+looks like a book and is called Wiki
 
 <img src="Docs/Wiki.png">
