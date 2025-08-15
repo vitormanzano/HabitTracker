@@ -13,8 +13,6 @@ Check more in the Wiki!
 In the top bar of the page, you'll see many services in my repository, find the one that
 looks like a book and is called Wiki
 
-[Wiki](wiki)
-
 <img src="Docs/Wiki.png">
 
 
