@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36414.22 d17.14
+VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Habits", "Habits", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -13,9 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scheduling", "Scheduling", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tracking", "Tracking", "{E27046DB-96BB-4BE8-A8B8-6EBF33ECFFD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracker.Habits.Domain", "..\src\HabitTracker.Habits.Domain\HabitTracker.Habits.Domain.csproj", "{B62801F3-8AF3-42C9-AB4B-A4AA363EDCED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracker.Habits.Domain", "src\HabitTracker.Habits.Domain\HabitTracker.Habits.Domain.csproj", "{ED429883-6319-A4C0-C706-06CF656F9387}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracker.Core", "..\src\HabitTracker.Core\HabitTracker.Core.csproj", "{FC1C30FE-C4F5-4F12-BAD2-B7DDF06109C7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracker.Core", "src\HabitTracker.Core\HabitTracker.Core.csproj", "{626C5330-A083-DA12-B192-2AC5F8AFA808}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,21 +23,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B62801F3-8AF3-42C9-AB4B-A4AA363EDCED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B62801F3-8AF3-42C9-AB4B-A4AA363EDCED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B62801F3-8AF3-42C9-AB4B-A4AA363EDCED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B62801F3-8AF3-42C9-AB4B-A4AA363EDCED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FC1C30FE-C4F5-4F12-BAD2-B7DDF06109C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC1C30FE-C4F5-4F12-BAD2-B7DDF06109C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC1C30FE-C4F5-4F12-BAD2-B7DDF06109C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC1C30FE-C4F5-4F12-BAD2-B7DDF06109C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED429883-6319-A4C0-C706-06CF656F9387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED429883-6319-A4C0-C706-06CF656F9387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED429883-6319-A4C0-C706-06CF656F9387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED429883-6319-A4C0-C706-06CF656F9387}.Release|Any CPU.Build.0 = Release|Any CPU
+		{626C5330-A083-DA12-B192-2AC5F8AFA808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{626C5330-A083-DA12-B192-2AC5F8AFA808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{626C5330-A083-DA12-B192-2AC5F8AFA808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{626C5330-A083-DA12-B192-2AC5F8AFA808}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{B62801F3-8AF3-42C9-AB4B-A4AA363EDCED} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
-		{FC1C30FE-C4F5-4F12-BAD2-B7DDF06109C7} = {16C6E199-9751-4451-85F6-4420557FC67A}
+		{ED429883-6319-A4C0-C706-06CF656F9387} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{626C5330-A083-DA12-B192-2AC5F8AFA808} = {16C6E199-9751-4451-85F6-4420557FC67A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7B4854F-35F0-496E-BA47-5797BC1DCC94}
