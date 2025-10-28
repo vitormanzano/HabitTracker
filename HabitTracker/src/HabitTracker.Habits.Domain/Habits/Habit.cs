@@ -18,6 +18,8 @@ namespace HabitTracker.Habits.Domain.Habits
             Frequency = frequency;
             CategoryId = categoryId;
             IsActive = true;
+
+            Validate();
         }
 
         public void Deactivate() => IsActive = false;
