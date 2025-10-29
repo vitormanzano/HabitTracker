@@ -36,15 +36,14 @@ namespace HabitTracker.Habits.Domain.Habits
 
         public void UpdateDescription(string description) => Description = description;
 
-        public void DidHabit() => TimesDidIt++;
-
+        public void DidHabit() => TimesCompleted++;
         public void Validate()
         {
             AssertionConcern.ValidateIfEmpty(Title, "The title of the habit cannot be empty.");
             AssertionConcern.ValidateCharacters(Title, 3, 100, "The title of the habit must be between 3 and 100 characters.");
             AssertionConcern.ValidateIfEmpty(Description, "The description of the habit cannot be empty.");
             AssertionConcern.ValidateCharacters(Description, 5, 500, "The description of the habit must be between 5 and 500 characters.");
-            AssertionConcern.ValidateMinimumMaximum(TimesDidIt, 0, int.MaxValue, "The frequency of the habit must be a non-negative integer.");
+            AssertionConcern.ValidateMinimumMaximum(TimesCompleted, 0, int.MaxValue, "The frequency of the habit must be a non-negative integer.");
             AssertionConcern.ValidateIfEquals(CategoryId, Guid.Empty, "The category ID of the habit must be a valid GUID.");
         }
     }
