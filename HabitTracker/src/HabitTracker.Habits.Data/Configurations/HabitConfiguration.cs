@@ -20,7 +20,7 @@ namespace HabitTracker.Habits.Data.Configurations
                 .IsRequired()
                 .HasColumnType("VARCHAR(255)");
 
-            builder.Property(p => p.Frequency)
+            builder.Property(p => p.TimesDidIt)
                 .IsRequired()
                 .HasColumnType("INTEGER");
         }
