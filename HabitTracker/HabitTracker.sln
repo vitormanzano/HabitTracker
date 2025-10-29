@@ -21,6 +21,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{95FBC467
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracker.Habits.Domain.Tests", "tests\HabitTracker.Habits.Domain.Tests\HabitTracker.Habits.Domain.Tests.csproj", "{422E4964-A986-4FEC-9F68-5EFEFD36C252}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{14179CB0-8559-44A9-8B15-941BA2FF4670}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracker.Habits.Data", "src\HabitTracker.Habits.Data\HabitTracker.Habits.Data.csproj", "{620499BF-77C7-48C1-951B-736DC573AB7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,10 @@ Global
 		{422E4964-A986-4FEC-9F68-5EFEFD36C252}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{422E4964-A986-4FEC-9F68-5EFEFD36C252}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{422E4964-A986-4FEC-9F68-5EFEFD36C252}.Release|Any CPU.Build.0 = Release|Any CPU
+		{620499BF-77C7-48C1-951B-736DC573AB7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{620499BF-77C7-48C1-951B-736DC573AB7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{620499BF-77C7-48C1-951B-736DC573AB7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{620499BF-77C7-48C1-951B-736DC573AB7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +56,8 @@ Global
 		{626C5330-A083-DA12-B192-2AC5F8AFA808} = {16C6E199-9751-4451-85F6-4420557FC67A}
 		{95FBC467-9B1A-4153-AF03-1584E7A326EA} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{422E4964-A986-4FEC-9F68-5EFEFD36C252} = {95FBC467-9B1A-4153-AF03-1584E7A326EA}
+		{14179CB0-8559-44A9-8B15-941BA2FF4670} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{620499BF-77C7-48C1-951B-736DC573AB7E} = {14179CB0-8559-44A9-8B15-941BA2FF4670}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7B4854F-35F0-496E-BA47-5797BC1DCC94}

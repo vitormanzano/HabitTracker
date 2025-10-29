@@ -11,6 +11,8 @@ namespace HabitTracker.Habits.Domain.Habits
         public Category Category { get; private set; }
         public bool IsActive { get; private set; }
 
+        protected Habit() { }
+
         public Habit(string title, string description, int frequency, Guid categoryId)
         {
             Title = title;
