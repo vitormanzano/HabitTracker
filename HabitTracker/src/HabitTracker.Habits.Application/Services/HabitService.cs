@@ -1,4 +1,5 @@
 ﻿using HabitTracker.Habits.Application.Dtos.Habits;
+using HabitTracker.Habits.Application.Exceptions;
 using HabitTracker.Habits.Domain.Habits;
 
 namespace HabitTracker.Habits.Application.Services
@@ -12,19 +13,43 @@ namespace HabitTracker.Habits.Application.Services
             _habitRepository = habitRepository;
         }
 
-        public Task CreateAsync(CreateHabitDto habit)
+        public async Task CreateAsync(CreateHabitDto habit)
         {
-            throw new NotImplementedException();
+            await _habitRepository.CreateAsync(new Habit(
+                habit.Title,
+                habit.Description,
+                habit.CategoryId
+                ));
+
+            await _habitRepository.UnitOfWork.CommitAsync();
         }
 
-        public Task<Habit> GetByIdAsync(Guid Id)
+        public async Task<HabitResponseDto> GetByIdAsync(Guid Id)
         {
-            throw new NotImplementedException();
+            var habit = await _habitRepository.GetByIdAsync(Id);
+            
+            if (habit == null)
+                throw new HabitNotFoundException();
+
+            return new HabitResponseDto(
+                habit.Title,
+                habit.Description,
+                habit.CategoryId
+                );
         }
 
-        public Task<IEnumerable<Habit>> GetAllAsync()
+        public async Task<IEnumerable<HabitResponseDto>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var habits =  await _habitRepository.GetAllAsync();
+
+            if (!habits.Any())
+                throw new HabitNotFoundException();
+
+            return habits.Select(habit => new HabitResponseDto(
+                habit.Title,
+                habit.Description,
+                habit.CategoryId
+                ));
         }
 
         public Task DeleteAsync(CreateHabitDto habit)
@@ -34,7 +59,7 @@ namespace HabitTracker.Habits.Application.Services
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _habitRepository?.Dispose();
         }   
     }
 }

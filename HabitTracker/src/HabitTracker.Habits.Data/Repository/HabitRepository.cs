@@ -22,10 +22,11 @@ namespace HabitTracker.Habits.Data.Repository
                 .ToListAsync();
         }
 
-        public async Task<Habit> GetByIdAsync(Guid id)
+        public async Task<Habit?> GetByIdAsync(Guid id)
         {
             return await _context.Habits
-                .FindAsync(id);
+                .Include(h => h.Category)
+                .FirstOrDefaultAsync(h => h.Id == id);
         }
 
         public async Task DeleteAsync(Habit habit)
