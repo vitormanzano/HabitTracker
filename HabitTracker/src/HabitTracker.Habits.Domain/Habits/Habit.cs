@@ -13,11 +13,11 @@ namespace HabitTracker.Habits.Domain.Habits
 
         protected Habit() { }
 
-        public Habit(string title, string description, int timesCompleted, Guid categoryId)
+        public Habit(string title, string description, Guid categoryId)
         {
             Title = title;
             Description = description;
-            TimesCompleted = timesCompleted;
+            TimesCompleted = 0;
             CategoryId = categoryId;
             IsActive = true;
 
