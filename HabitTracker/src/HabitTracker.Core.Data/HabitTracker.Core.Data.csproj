@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HabitTracker.Core\HabitTracker.Core.csproj" />
-    <ProjectReference Include="..\HabitTracker.Habits.Data\HabitTracker.Habits.Data.csproj" />
-    <ProjectReference Include="..\HabitTracker.Habits.Domain\HabitTracker.Habits.Domain.csproj" />
   </ItemGroup>
 
 </Project>

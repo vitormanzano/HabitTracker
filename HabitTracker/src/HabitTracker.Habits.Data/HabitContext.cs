@@ -5,10 +5,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HabitTracker.Habits.Data
 {
-    public class HabitContext(DbContextOptions<HabitContext> options) : DbContext(options), IUnitOfWork
+    public class HabitContext: DbContext, IUnitOfWork
     {
         public DbSet<Habit> Habits { get; set; }
         public DbSet<Category> Categories { get; set; }
+
+        public HabitContext(DbContextOptions<HabitContext> options) : base(options)
+        {
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -17,8 +21,7 @@ namespace HabitTracker.Habits.Data
                 .Where(p => p.ClrType == typeof(string))
                 )
             )
-                property.SetColumnType("VARCHAR(100)");
-                    
+                property.SetMaxLength(100);
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(HabitContext).Assembly);
         }
 
