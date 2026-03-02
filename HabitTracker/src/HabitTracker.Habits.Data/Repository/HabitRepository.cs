@@ -29,7 +29,13 @@ namespace HabitTracker.Habits.Data.Repository
                 .FirstOrDefaultAsync(h => h.Id == id);
         }
 
-        public async Task DeleteAsync(Habit habit)
+
+        public void UpdateAsync(Habit habit)
+        {
+            _context.Habits.Update(habit);
+        }
+
+        public void DeleteAsync(Habit habit)
         {
             _context.Habits
                 .Remove(habit);
