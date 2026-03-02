@@ -45,9 +45,15 @@ namespace HabitTracker.Habits.Application.Services
                 ));
         }
 
-        public Task DeleteAsync(Guid id)
+        public async Task DeleteAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var habit = await habitRepository.GetByIdAsync(id);
+
+            if (habit == null)
+                throw new HabitNotFoundException();
+
+            habitRepository.DeleteAsync(habit);
+            await habitRepository.UnitOfWork.CommitAsync();
         }
 
         public void Dispose()
