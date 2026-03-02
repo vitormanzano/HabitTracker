@@ -6,8 +6,8 @@ namespace HabitTracker.Habits.Application.Services
     public interface IHabitService : IDisposable
     {
         public Task CreateAsync(CreateHabitDto habit);
-        public Task<HabitResponseDto> GetByIdAsync(Guid Id);
+        public Task<HabitResponseDto> GetByIdAsync(Guid id);
         public Task<IEnumerable<HabitResponseDto>> GetAllAsync();
-        public Task DeleteAsync(CreateHabitDto habit);
+        public Task DeleteAsync(Guid id);
     }
 }

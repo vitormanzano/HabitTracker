@@ -17,9 +17,9 @@ namespace HabitTracker.Habits.Application.Services
             await habitRepository.UnitOfWork.CommitAsync();
         }
 
-        public async Task<HabitResponseDto> GetByIdAsync(Guid Id)
+        public async Task<HabitResponseDto> GetByIdAsync(Guid id)
         {
-            var habit = await habitRepository.GetByIdAsync(Id);
+            var habit = await habitRepository.GetByIdAsync(id);
             
             if (habit == null)
                 throw new HabitNotFoundException();
@@ -45,7 +45,7 @@ namespace HabitTracker.Habits.Application.Services
                 ));
         }
 
-        public Task DeleteAsync(CreateHabitDto habit)
+        public Task DeleteAsync(Guid id)
         {
             throw new NotImplementedException();
         }
