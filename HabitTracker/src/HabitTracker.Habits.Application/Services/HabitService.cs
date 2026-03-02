@@ -4,29 +4,22 @@ using HabitTracker.Habits.Domain.Habits;
 
 namespace HabitTracker.Habits.Application.Services
 {  
-    public class HabitService : IHabitService
+    public class HabitService(IHabitRepository habitRepository) : IHabitService
     {
-        private readonly IHabitRepository _habitRepository;
-
-        public HabitService(IHabitRepository habitRepository)
-        {
-            _habitRepository = habitRepository;
-        }
-
         public async Task CreateAsync(CreateHabitDto habit)
         {
-            await _habitRepository.CreateAsync(new Habit(
+            await habitRepository.CreateAsync(new Habit(
                 habit.Title,
                 habit.Description,
                 habit.CategoryId
                 ));
 
-            await _habitRepository.UnitOfWork.CommitAsync();
+            await habitRepository.UnitOfWork.CommitAsync();
         }
 
         public async Task<HabitResponseDto> GetByIdAsync(Guid Id)
         {
-            var habit = await _habitRepository.GetByIdAsync(Id);
+            var habit = await habitRepository.GetByIdAsync(Id);
             
             if (habit == null)
                 throw new HabitNotFoundException();
@@ -40,7 +33,7 @@ namespace HabitTracker.Habits.Application.Services
 
         public async Task<IEnumerable<HabitResponseDto>> GetAllAsync()
         {
-            var habits =  await _habitRepository.GetAllAsync();
+            var habits =  await habitRepository.GetAllAsync();
 
             if (!habits.Any())
                 throw new HabitNotFoundException();
@@ -59,7 +52,7 @@ namespace HabitTracker.Habits.Application.Services
 
         public void Dispose()
         {
-            _habitRepository?.Dispose();
+            habitRepository?.Dispose();
         }   
     }
 }
