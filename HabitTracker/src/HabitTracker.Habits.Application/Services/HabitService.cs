@@ -45,6 +45,17 @@ namespace HabitTracker.Habits.Application.Services
                 ));
         }
 
+        public async Task CompleteHabitAsync(Guid id)
+        {
+            var habit = await habitRepository.GetByIdAsync(id);
+
+            if (habit == null)
+                throw new HabitNotFoundException();
+
+            habit.DidHabit();
+            await habitRepository.UnitOfWork.CommitAsync();
+        }
+
         public async Task DeleteAsync(Guid id)
         {
             var habit = await habitRepository.GetByIdAsync(id);
@@ -59,6 +70,6 @@ namespace HabitTracker.Habits.Application.Services
         public void Dispose()
         {
             habitRepository?.Dispose();
-        }   
+        }
     }
 }
