@@ -8,6 +8,11 @@ namespace HabitTracker.Habits.Application.Services
     {
         public async Task CreateAsync(CreateHabitDto habit)
         {
+            var habitExists = await habitRepository.GetByTitleAsync(habit.Title);
+
+            if (habitExists != null)
+                throw new HabitAlreadyExistsException();
+
             await habitRepository.CreateAsync(new Habit(
                 habit.Title,
                 habit.Description,
