@@ -7,6 +7,7 @@ namespace HabitTracker.Habits.Domain.Habits
         Task CreateAsync(Habit habit);
         Task<Habit?> GetByIdAsync(Guid id);
         Task<IEnumerable<Habit>> GetAllAsync();
+        Task<Habit?> GetByTitleAsync(string title);
         void UpdateAsync(Habit habit);
         void DeleteAsync(Habit habit);
     }

@@ -29,6 +29,12 @@ namespace HabitTracker.Habits.Data.Repository
                 .FirstOrDefaultAsync(h => h.Id == id);
         }
 
+        public async Task<Habit?> GetByTitleAsync(string title)
+        {
+            return await _context.Habits
+                .Include(h => h.Category)
+                .FirstOrDefaultAsync(h => h.Title.Equals(title));
+        }
 
         public void UpdateAsync(Habit habit)
         {
