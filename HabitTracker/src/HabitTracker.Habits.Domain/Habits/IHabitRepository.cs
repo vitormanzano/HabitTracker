@@ -10,5 +10,7 @@ namespace HabitTracker.Habits.Domain.Habits
         Task<Habit?> GetByTitleAsync(string title);
         void UpdateAsync(Habit habit);
         void DeleteAsync(Habit habit);
+
+        Task CreateCategoryAsync(Category category);
     }
 }

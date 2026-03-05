@@ -1,4 +1,5 @@
 ﻿using HabitTracker.Core.Data;
+using HabitTracker.Habits.Domain;
 using HabitTracker.Habits.Domain.Habits;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,7 +13,7 @@ namespace HabitTracker.Habits.Data.Repository
 
         public async Task CreateAsync(Habit habit)
         {
-            await _context.AddAsync(habit);
+            await _context.Habits.AddAsync(habit);
         }
 
         public async Task<IEnumerable<Habit>> GetAllAsync()
@@ -50,6 +51,11 @@ namespace HabitTracker.Habits.Data.Repository
         public void Dispose()
         {
             _context.Dispose();
+        }
+
+        public async Task CreateCategoryAsync(Category category)
+        {
+            await _context.Categories.AddAsync(category);
         }
     }
 }
