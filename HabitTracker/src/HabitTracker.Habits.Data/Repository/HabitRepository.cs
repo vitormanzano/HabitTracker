@@ -70,5 +70,10 @@ namespace HabitTracker.Habits.Data.Repository
                 .AsNoTracking()
                 .ToListAsync();
         }
+
+        public void DeleteCategory(Category category)
+        {
+            _context.Categories.Remove(category);
+        }
     }
 }
