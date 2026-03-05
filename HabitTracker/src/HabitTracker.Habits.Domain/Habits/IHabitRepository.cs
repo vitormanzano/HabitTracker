@@ -12,5 +12,7 @@ namespace HabitTracker.Habits.Domain.Habits
         void DeleteAsync(Habit habit);
 
         Task CreateCategoryAsync(Category category);
+        Task<Category?> GetCategoryByIdAsync(Guid id);
+         Task<IEnumerable<Category>> GetAllCategoriesAsync();
     }
 }

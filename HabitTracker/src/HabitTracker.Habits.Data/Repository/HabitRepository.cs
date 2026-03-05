@@ -57,5 +57,18 @@ namespace HabitTracker.Habits.Data.Repository
         {
             await _context.Categories.AddAsync(category);
         }
+
+        public async Task<Category?> GetCategoryByIdAsync(Guid id)
+        {
+            return await _context.Categories
+                .FirstOrDefaultAsync(c => c.Id == id);
+        }
+
+        public async Task<IEnumerable<Category>> GetAllCategoriesAsync()
+        {
+            return await _context.Categories
+                .AsNoTracking()
+                .ToListAsync();
+        }
     }
 }
