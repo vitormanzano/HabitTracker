@@ -61,6 +61,17 @@ namespace HabitTracker.Habits.Application.Services
             await habitRepository.UnitOfWork.CommitAsync();
         }
 
+        public async Task UncompleteHabitAsync(Guid id)
+        {
+            var habit = await habitRepository.GetByIdAsync(id);
+
+            if (habit == null)
+                throw new HabitNotFoundException();
+
+            habit.UndidHabit();
+            await habitRepository.UnitOfWork.CommitAsync();
+        }
+
         public async Task DeleteAsync(Guid id)
         {
             var habit = await habitRepository.GetByIdAsync(id);

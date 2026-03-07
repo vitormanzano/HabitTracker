@@ -37,6 +37,7 @@ namespace HabitTracker.Habits.Domain.Habits
         public void UpdateDescription(string description) => Description = description;
 
         public void DidHabit() => TimesCompleted++;
+        public void UndidHabit() => TimesCompleted = TimesCompleted > 0 ? TimesCompleted - 1 : 0;
         public void Validate()
         {
             AssertionConcern.ValidateIfEmpty(Title, "The title of the habit cannot be empty.");
