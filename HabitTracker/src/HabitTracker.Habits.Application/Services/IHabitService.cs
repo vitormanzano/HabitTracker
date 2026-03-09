@@ -1,4 +1,5 @@
-﻿using HabitTracker.Habits.Application.Dtos.Habits;
+﻿using HabitTracker.Habits.Application.Dtos.Category;
+using HabitTracker.Habits.Application.Dtos.Habits;
 
 namespace HabitTracker.Habits.Application.Services
 {
@@ -10,5 +11,10 @@ namespace HabitTracker.Habits.Application.Services
         public Task CompleteHabitAsync(Guid id);
         public Task UncompleteHabitAsync(Guid id);
         public Task DeleteAsync(Guid id);
+
+        public Task CreateCategoryAsync(CreateCategoryDto createCategoryDto);
+        public Task<CategoryResponseDto> GetCategoryByIdAsync(Guid id);
+        public Task<IEnumerable<CategoryResponseDto>> GetAllCategoriesAsync();
+        public Task DeleteCategoryByIdAsync(Guid id);
     }
 }

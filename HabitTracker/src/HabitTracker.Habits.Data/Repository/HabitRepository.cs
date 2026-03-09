@@ -64,6 +64,12 @@ namespace HabitTracker.Habits.Data.Repository
                 .FirstOrDefaultAsync(c => c.Id == id);
         }
 
+        public async Task<Category?> GetCategoryByNameAsync(string name)
+        {
+            return await _context.Categories
+                .FirstOrDefaultAsync(c => c.Name.Equals(name));
+        }
+
         public async Task<IEnumerable<Category>> GetAllCategoriesAsync()
         {
             return await _context.Categories

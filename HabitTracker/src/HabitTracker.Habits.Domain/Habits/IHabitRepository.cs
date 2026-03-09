@@ -13,6 +13,7 @@ namespace HabitTracker.Habits.Domain.Habits
 
         Task CreateCategoryAsync(Category category);
         Task<Category?> GetCategoryByIdAsync(Guid id);
+        Task<Category?> GetCategoryByNameAsync(string name);
         Task<IEnumerable<Category>> GetAllCategoriesAsync();
         void DeleteCategory(Category category);
     }
