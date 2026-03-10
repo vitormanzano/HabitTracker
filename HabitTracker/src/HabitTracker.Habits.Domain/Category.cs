@@ -17,10 +17,21 @@ namespace HabitTracker.Habits.Domain
             Validate();
         }
 
-        public void Validate()
+        public void UpdateName(string name)
+        {
+            ValidateName(name);
+            Name = name;
+        }
+
+        private void ValidateName(string name)
         {
             AssertionConcern.ValidateIfEmpty(Name, "The name of the category cannot be empty.");
             AssertionConcern.ValidateCharacters(Name, 3, 100, "The name of the category must be between 3 and 100 characters.");
+        }
+
+        public void Validate()
+        {
+            ValidateName(Name);
         }
     }
 }
