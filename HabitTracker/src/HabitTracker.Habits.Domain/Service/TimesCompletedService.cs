@@ -12,7 +12,7 @@ namespace HabitTracker.Habits.Domain.Service
             if (habit == null)
                 throw new HabitNotFoundException();
 
-            habit.DidHabit();
+            habit.CompleteHabit();
             habitRepository.UpdateAsync(habit);
 
             return await habitRepository.UnitOfWork.CommitAsync();
@@ -25,7 +25,7 @@ namespace HabitTracker.Habits.Domain.Service
             if (habit == null)
                 throw new HabitNotFoundException();
 
-            habit.UndidHabit();
+            habit.UncompleteHabit();
             habitRepository.UpdateAsync(habit);
 
             return await habitRepository.UnitOfWork.CommitAsync();

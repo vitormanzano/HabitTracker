@@ -64,8 +64,8 @@ namespace HabitTracker.Habits.Domain.Habits
             AssertionConcern.ValidateIfEquals(CategoryId, Guid.Empty, "The category ID of the habit must be a valid GUID.");
         }
 
-        public void DidHabit() => TimesCompleted++;
-        public void UndidHabit() => TimesCompleted = TimesCompleted > 0 ? TimesCompleted - 1 : 0;
+        public void CompleteHabit() => TimesCompleted++;
+        public void UncompleteHabit() => TimesCompleted = TimesCompleted > 0 ? TimesCompleted - 1 : 0;
 
         public void Validate()
         {
