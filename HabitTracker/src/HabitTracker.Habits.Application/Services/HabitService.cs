@@ -1,6 +1,6 @@
 ﻿using HabitTracker.Habits.Application.Dtos.Category;
 using HabitTracker.Habits.Application.Dtos.Habits;
-using HabitTracker.Habits.Application.Exceptions;
+using HabitTracker.Habits.Domain.Exceptions;
 using HabitTracker.Habits.Domain;
 using HabitTracker.Habits.Domain.Habits;
 
@@ -50,28 +50,6 @@ namespace HabitTracker.Habits.Application.Services
                 habit.Description,
                 habit.CategoryId
                 ));
-        }
-
-        public async Task CompleteHabitAsync(Guid id)
-        {
-            var habit = await habitRepository.GetByIdAsync(id);
-
-            if (habit == null)
-                throw new HabitNotFoundException();
-
-            habit.DidHabit();
-            await habitRepository.UnitOfWork.CommitAsync();
-        }
-
-        public async Task UncompleteHabitAsync(Guid id)
-        {
-            var habit = await habitRepository.GetByIdAsync(id);
-
-            if (habit == null)
-                throw new HabitNotFoundException();
-
-            habit.UndidHabit();
-            await habitRepository.UnitOfWork.CommitAsync();
         }
 
         public async Task DeleteAsync(Guid id)

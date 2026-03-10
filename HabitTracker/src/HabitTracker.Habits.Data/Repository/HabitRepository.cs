@@ -48,11 +48,6 @@ namespace HabitTracker.Habits.Data.Repository
                 .Remove(habit);
         }
 
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
-
         public async Task CreateCategoryAsync(Category category)
         {
             await _context.Categories.AddAsync(category);
@@ -81,5 +76,11 @@ namespace HabitTracker.Habits.Data.Repository
         {
             _context.Categories.Remove(category);
         }
+
+        public void Dispose()
+        {
+            _context.Dispose();
+        }
+
     }
 }
